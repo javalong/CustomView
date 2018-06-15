@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-s    <declare-styleable name="jcl_StepView">
+    <declare-styleable name="jcl_StepView">
         <attr name="jcl_stepCount" format="integer" />
         <attr name="jcl_mainColor" format="color|reference" />
         <attr name="jcl_minorColor" format="color|reference" />
