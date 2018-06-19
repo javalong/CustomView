@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer-array name="jcl_EvaluationView_bitmapToShapeSpace">
+        <item>70</item>
+        <item>50</item>
+        <item>50</item>
+        <item>50</item>
+    </integer-array>
+</resources>

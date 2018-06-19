@@ -9,4 +9,17 @@
         <attr name="jcl_circleSize" format="dimension|reference" />
         <attr name="jcl_numberTextSize" format="dimension|reference" />
     </declare-styleable>
+
+    <declare-styleable name="jcl_Evalueation">
+        <attr name="jcl_Evalueation_sideLength" format="dimension|reference" />
+        <attr name="jcl_Evalueation_lineColor" format="color|reference" />
+        <attr name="jcl_Evalueation_textColor" format="color|reference" />
+        <attr name="jcl_Evalueation_shapeColor" format="color|reference" />
+        <attr name="jcl_Evalueation_lineWidth" format="dimension|reference" />
+        <attr name="jcl_Evalueation_textSize" format="dimension|reference" />
+        <attr name="jcl_Evalueation_iconSize" format="dimension|reference" />
+        <attr name="jcl_Evalueation_polygonNum" format="integer" />
+        <attr name="jcl_Evalueation_bitmapToShapeSpace" format="reference" />
+        <attr name="jcl_Evalueation_textToBitmapSpace" format="dimension|reference" />
+    </declare-styleable>
 </resources>

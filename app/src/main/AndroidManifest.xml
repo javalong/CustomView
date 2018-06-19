@@ -17,6 +17,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".StepViewActivity"></activity>
+        <activity android:name=".EvaluationActivity"></activity>
     </application>
 
 </manifest>
