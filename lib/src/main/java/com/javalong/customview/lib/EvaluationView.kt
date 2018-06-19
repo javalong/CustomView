@@ -74,62 +74,73 @@ class EvaluationView : View {
         private var shapeColor = DEFAULT_SHAPE_COLOR
         private var shaderHandler: ShaderHandler? = null
 
+        //多边形的中心到每个点长度,相当于半径
         fun sideLength(sideLength: Float): Builder {
             this.sideLength = sideLength
             return this
         }
 
+        //几边形
         fun polygonNum(polygonNum: Int): Builder {
             this.polygonNum = polygonNum
             return this
         }
 
+        //icon大小
         fun iconSize(iconSize: Float): Builder {
             this.iconSize = iconSize
             return this
         }
 
+        //文字距离icon的距离
         fun textToBitmapSpace(textToBitmapSpace: Float): Builder {
             this.textToBitmapSpace = textToBitmapSpace
             return this
         }
 
+        //最大分值
         fun maxScore(maxScore: Int): Builder {
             this.maxScore = maxScore
             return this
         }
 
+        //线的颜色
         fun lineColor(lineColor: Int): Builder {
             this.lineColor = lineColor
             return this
         }
 
+        //线的宽度
         fun lineWidth(lineWidth: Float): Builder {
             this.lineWidth = lineWidth
             return this
         }
 
-
+        //渐变填充器
         fun shaderHandler(shaderHandler: ShaderHandler): Builder {
             this.shaderHandler = shaderHandler
             return this
         }
 
+        //字体颜色
         fun textColor(textColor: Int): Builder {
             this.textColor = textColor
             return this
         }
 
+        //字体大小
         fun textSize(textSize: Float): Builder {
             this.textSize = textSize
             return this
         }
 
+        //中心的填充的颜色
         fun shapeColor(shapeColor: Int): Builder {
             this.shapeColor = shapeColor
             return this
         }
 
+        //icon距离多边形的距离，数组，代表每个点距离多边形的距离s
         fun bitmapToShapeSpace(bitmapToShapeSpace: Array<Int>): Builder {
             this.bitmapToShapeSpace = bitmapToShapeSpace
             return this
@@ -166,6 +177,7 @@ class EvaluationView : View {
         shapeColor = typeArr.getColor(R.styleable.jcl_Evalueation_jcl_Evalueation_shapeColor, DEFAULT_SHAPE_COLOR)
         textSize = typeArr.getDimension(R.styleable.jcl_Evalueation_jcl_Evalueation_textSize, DEFAULT_TEXTSIZE)
         iconSize = typeArr.getDimension(R.styleable.jcl_Evalueation_jcl_Evalueation_iconSize, DEFAULT_ICON_SIZE)
+        maxScore = typeArr.getInteger(R.styleable.jcl_Evalueation_jcl_Evalueation_maxScore, DEFAULT_MAX_SCORE)
         var resId = typeArr.getResourceId(R.styleable.jcl_Evalueation_jcl_Evalueation_bitmapToShapeSpace, -1)
         if (resId != -1) {
             bitmapToShapeSpace = resources.getIntArray(resId).toTypedArray()

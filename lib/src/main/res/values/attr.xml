@@ -11,15 +11,27 @@
     </declare-styleable>
 
     <declare-styleable name="jcl_Evalueation">
+        <!--多边形的中心到每个点长度,相当于半径-->
         <attr name="jcl_Evalueation_sideLength" format="dimension|reference" />
+        <!--线的颜色-->
         <attr name="jcl_Evalueation_lineColor" format="color|reference" />
+        <!--字体的颜色-->
         <attr name="jcl_Evalueation_textColor" format="color|reference" />
+        <!--中心的填充的颜色-->
         <attr name="jcl_Evalueation_shapeColor" format="color|reference" />
+        <!--线的宽度-->
         <attr name="jcl_Evalueation_lineWidth" format="dimension|reference" />
+        <!--字体的大小-->
         <attr name="jcl_Evalueation_textSize" format="dimension|reference" />
+        <!--icon的大小-->
         <attr name="jcl_Evalueation_iconSize" format="dimension|reference" />
+        <!--最大分值-->
+        <attr name="jcl_Evalueation_maxScore" format="integer" />
+        <!--几边行-->
         <attr name="jcl_Evalueation_polygonNum" format="integer" />
+        <!--icon距离多边形的距离，数组，代表每个点距离多边形的距离-->
         <attr name="jcl_Evalueation_bitmapToShapeSpace" format="reference" />
+        <!--文字距离icon的距离-->
         <attr name="jcl_Evalueation_textToBitmapSpace" format="dimension|reference" />
     </declare-styleable>
 </resources>
