@@ -8,7 +8,7 @@
     tools:context=".StepViewActivity">
 
 
-    <com.javalong.customview.lib.EvaluationView
+    <com.javalong.customview.lib.view.EvaluationView
         android:id="@+id/evaluationView"
         android:layout_width="match_parent"
         android:layout_height="0dp"

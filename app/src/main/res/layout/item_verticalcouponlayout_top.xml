@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="101dp">
+
+        <ImageView
+            android:id="@+id/ivIcon"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/ic_launcher"
+            android:layout_marginLeft="16dp"
+            android:scaleType="fitCenter" />
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="21dp"
+            android:layout_toRightOf="@id/ivIcon"
+            android:text="优惠券"
+            android:textColor="#222222"
+            android:textSize="16dp" />
+
+        <TextView
+            android:id="@+id/tvRule"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvTitle"
+            android:layout_marginLeft="16dp"
+            android:layout_toRightOf="@id/ivIcon"
+            android:text="满100元可用"
+            android:textColor="#44222222"
+            android:textSize="12dp" />
+
+        <TextView
+            android:id="@+id/tvValidDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvRule"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="6dp"
+            android:text="2010.01.01-2010.01.02"
+            android:layout_toRightOf="@id/ivIcon"
+            android:textColor="#44222222"
+            android:textSize="10dp" />
+
+        <TextView
+            android:id="@+id/tvPrice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="26dp"
+            android:gravity="right"
+            android:textColor="#222222"
+            android:textSize="36dp" />
+
+    </RelativeLayout>
+</merge>

@@ -9,7 +9,7 @@ import android.util.SparseArray
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.target.SimpleTarget
 import com.bumptech.glide.request.transition.Transition
-import com.javalong.customview.lib.EvaluationView
+import com.javalong.customview.lib.view.EvaluationView
 import kotlinx.android.synthetic.main.activity_evaluation_view.*
 
 class EvaluationActivity : AppCompatActivity() {

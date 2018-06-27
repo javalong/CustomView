@@ -1,10 +1,11 @@
-package com.javalong.customview.lib
+package com.javalong.customview.lib.view
 
 import android.content.Context
 import android.graphics.*
 import android.util.AttributeSet
 import android.view.View
 import android.view.ViewGroup
+import com.javalong.customview.lib.R
 
 class StepView : View {
 
@@ -245,7 +246,7 @@ class StepView : View {
     }
 
     fun attachTo(parent: ViewGroup, layoutParam: ViewGroup.LayoutParams?): StepView {
-        parent.addView(this, layoutParams)
+        parent.addView(this, layoutParam)
         return this
     }
 

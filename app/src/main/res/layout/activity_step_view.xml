@@ -13,7 +13,7 @@
         android:layout_height="0dp"
         android:layout_weight="1">
 
-        <com.javalong.customview.lib.StepView
+        <com.javalong.customview.lib.view.StepView
             android:id="@+id/topStempView"
             android:layout_width="match_parent"
             android:layout_height="60dp"

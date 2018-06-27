@@ -2,7 +2,7 @@ package com.javalong.customview
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import com.javalong.customview.lib.StepView
+import com.javalong.customview.lib.view.StepView
 import kotlinx.android.synthetic.main.activity_step_view.*
 
 class StepViewActivity : AppCompatActivity() {

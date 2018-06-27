@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">CustomView</string>
+    <string name="use_introduction">使用说明：\n \n 1. xxxxxxxx\n 2. xxxxxxxx\n 3. xxxxxxxx\n 4. xxxxxxxx\n </string>
 </resources>

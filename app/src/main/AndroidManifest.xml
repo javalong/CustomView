@@ -18,6 +18,8 @@
         </activity>
         <activity android:name=".StepViewActivity"></activity>
         <activity android:name=".EvaluationActivity"></activity>
+        <activity android:name=".CouponLayoutActivity"></activity>
+        <activity android:name=".CouponDetailLayoutActivity"></activity>
     </application>
 
 </manifest>

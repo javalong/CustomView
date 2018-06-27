@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="16dp"
+        android:paddingTop="16dp">
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="购物券"
+            android:textColor="#222222"
+            android:textSize="16dp" />
+
+        <TextView
+            android:id="@+id/tvDesc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvTitle"
+            android:layout_marginTop="4dp"
+            android:text="满1000元可用"
+            android:textColor="#AAAAAA"
+            android:textSize="10dp" />
+
+        <TextView
+            android:id="@+id/tvUse"
+            android:layout_width="wrap_content"
+            android:layout_height="24dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="10dp"
+            android:background="#ccad74"
+            android:gravity="center"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:text="领取"
+            android:textColor="@android:color/white"
+            android:textSize="12dp" />
+
+
+        <TextView
+            android:id="@+id/tvValidDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="8dp"
+            android:layout_marginRight="16dp"
+            android:text="2010.01.01-2010.01.02"
+            android:textColor="#AAAAAA"
+            android:textSize="10dp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="26dp"
+            android:layout_marginRight="16dp"
+            android:background="@drawable/line_dash_e7e7e7" />
+
+
+    </RelativeLayout>
+</merge>

@@ -34,4 +34,32 @@
         <!--文字距离icon的距离-->
         <attr name="jcl_Evalueation_textToBitmapSpace" format="dimension|reference" />
     </declare-styleable>
+
+    <declare-styleable name="jcl_HorizontalCouponLayout">
+        <!--被裁剪的角上的圆的半径-->
+        <attr name="jcl_HorizontalCouponLayout_indentRadius" format="dimension|reference" />
+        <!--阴影大小-->
+        <attr name="jcl_HorizontalCouponLayout_shadowRadius" format="dimension|reference" />
+        <!--中间一排的空心圆的宽度-->
+        <attr name="jcl_HorizontalCouponLayout_mediumCircleWidth" format="dimension|reference" />
+        <!--中间一排的空心圆的高度-->
+        <attr name="jcl_HorizontalCouponLayout_mediumCircleHeight" format="dimension|reference" />
+        <!--中间一排的空心圆的个数-->
+        <attr name="jcl_HorizontalCouponLayout_mediumCircleCount" format="integer|reference" />
+    </declare-styleable>
+
+
+    <declare-styleable name="jcl_VerticalCouponLayout">
+        <!--被裁剪的角上的圆的半径-->
+        <attr name="jcl_VerticalCouponLayout_indentRadius" format="dimension|reference" />
+        <!--阴影大小-->
+        <attr name="jcl_VerticalCouponLayout_shadowRadius" format="dimension|reference" />
+        <!--中间一排的空心圆的宽度-->
+        <attr name="jcl_VerticalCouponLayout_mediumCircleWidth" format="dimension|reference" />
+        <!--中间一排的空心圆的高度-->
+        <attr name="jcl_VerticalCouponLayout_mediumCircleHeight" format="dimension|reference" />
+        <!--中间一排的空心圆的个数-->
+        <attr name="jcl_VerticalCouponLayout_mediumCircleCount" format="integer|reference" />
+    </declare-styleable>
+
 </resources>

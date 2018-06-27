@@ -1,4 +1,4 @@
-package com.javalong.customview.lib
+package com.javalong.customview.lib.view
 
 import android.content.Context
 import android.graphics.*
@@ -7,6 +7,7 @@ import android.util.AttributeSet
 import android.util.SparseArray
 import android.view.View
 import android.view.ViewGroup
+import com.javalong.customview.lib.R
 import com.javalong.customview.lib.exception.CustomViewParamException
 
 class EvaluationView : View {
@@ -316,7 +317,7 @@ class EvaluationView : View {
     }
 
     fun attachTo(parent: ViewGroup, layoutParam: ViewGroup.LayoutParams?): EvaluationView {
-        parent.addView(this, layoutParams)
+        parent.addView(this, layoutParam)
         return this
     }
 
