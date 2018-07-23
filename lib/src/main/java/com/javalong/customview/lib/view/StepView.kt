@@ -9,6 +9,8 @@ import com.javalong.customview.lib.R
 
 class StepView : View {
 
+    enum class Orientation
+
     companion object {
         //默认步数
         const val DEFAULT_STEP_COUNT = 3
@@ -24,20 +26,24 @@ class StepView : View {
         val DEFAULT_MAIN_COLOR = Color.parseColor("#CCAD74")
         //默认次一级的颜色(未完成的step的背景色，线条色)
         val DEFAULT_MINOR_COLOR = Color.parseColor("#E7E7E7")
+        //方向，尽量不使用枚举
+        const val HORIZONTAL = 1
+        const val VERTICAL = 2
     }
 
     class Builder(private val context: Context) {
-        private var stepCout = DEFAULT_STEP_COUNT
+        private var stepCount = DEFAULT_STEP_COUNT
         private var lineLength = DEFAULT_LINE_LENGTH
         private var lineWidth = DEFAULT_LINE_WIDTH
         private var circleSize = DEFAULT_CIRCLE_SIZE
         private var numTextSize = DEFAULT_NUM_TEXTSIZE
         private var mainColor = DEFAULT_MAIN_COLOR
         private var minorColor = DEFAULT_MINOR_COLOR
+        private var orientation = HORIZONTAL
 
         //设置当前的步数
         fun stepCount(stepCount: Int): Builder {
-            this.stepCout = stepCout
+            this.stepCount = stepCount
             return this
         }
 
@@ -78,15 +84,22 @@ class StepView : View {
             return this
         }
 
+        //设置方向
+        fun orientation(orientation: Int): Builder {
+            this.orientation = orientation
+            return this
+        }
+
         fun build(): StepView {
             var stepView = StepView(context)
             stepView.numTextSize = numTextSize
-            stepView.stepCout = stepCout
+            stepView.stepCount = stepCount
             stepView.minorColor = minorColor
             stepView.mainColor = mainColor
             stepView.lineWidth = lineWidth
             stepView.lineLength = lineLength
             stepView.circleSize = circleSize
+            stepView.orientation = orientation
             return stepView
         }
     }
@@ -97,7 +110,7 @@ class StepView : View {
         object UNCOMPLETE : CircleType()
     }
 
-    private var stepCout = DEFAULT_STEP_COUNT
+    private var stepCount = DEFAULT_STEP_COUNT
     private var lineLength = DEFAULT_LINE_LENGTH
     private var lineWidth = DEFAULT_LINE_WIDTH
     private var rightColor = Color.WHITE
@@ -106,6 +119,7 @@ class StepView : View {
     private var mainColor = DEFAULT_MAIN_COLOR
     private var minorColor = DEFAULT_MINOR_COLOR
     private var paint: Paint = Paint(Paint.ANTI_ALIAS_FLAG)
+    private var orientation = HORIZONTAL
 
     //当前的步数
     private var currentStep = 0
@@ -117,7 +131,7 @@ class StepView : View {
     constructor(context: Context, attrs: AttributeSet?) : super(context, attrs) {
         init()
         var typedValue = context.obtainStyledAttributes(attrs, R.styleable.jcl_StepView)
-        stepCout = typedValue.getInteger(R.styleable.jcl_StepView_jcl_stepCount, DEFAULT_STEP_COUNT)
+        stepCount = typedValue.getInteger(R.styleable.jcl_StepView_jcl_stepCount, DEFAULT_STEP_COUNT)
         lineLength = typedValue.getDimension(R.styleable.jcl_StepView_jcl_lineLength, DEFAULT_LINE_LENGTH)
         lineWidth = typedValue.getDimension(R.styleable.jcl_StepView_jcl_lineWidth, DEFAULT_LINE_WIDTH)
         mainColor = typedValue.getColor(R.styleable.jcl_StepView_jcl_mainColor, DEFAULT_MAIN_COLOR)
@@ -136,7 +150,7 @@ class StepView : View {
         var centerY = height / 2.0f
         canvas.translate(centerX, centerY)
         //画圈圈
-        for (i in 0 until stepCout) {
+        for (i in 0 until stepCount) {
             var circleType = getCircleType(i)
             var p = getCirclePoint(i)
             when (circleType) {
@@ -153,7 +167,7 @@ class StepView : View {
         }
 
         //画线
-        for (i in 0 until stepCout - 1) {
+        for (i in 0 until stepCount - 1) {
             var points = getLinePoints(i)
             if (i < currentStep) {
                 paint.color = mainColor
@@ -166,8 +180,13 @@ class StepView : View {
 
     //获取线的起点和终点
     private fun getLinePoints(index: Int): Array<PointF> {
-        var margin = getCirclePoint(index).x + circleSize
-        return arrayOf(PointF(margin * 1.0f, 0.0f), PointF(margin * 1.0f + lineLength, 0.0f))
+        if (orientation == HORIZONTAL) {
+            var margin = getCirclePoint(index).x + circleSize
+            return arrayOf(PointF(margin * 1.0f, 0.0f), PointF(margin * 1.0f + lineLength, 0.0f))
+        } else {
+            var margin = getCirclePoint(index).y + circleSize
+            return arrayOf(PointF(0.0f, margin * 1.0f), PointF(0.0f, margin * 1.0f + lineLength))
+        }
     }
 
     //画未选择的圆
@@ -208,17 +227,26 @@ class StepView : View {
 
     private fun getCirclePoint(index: Int): PointF {
         var margin = 0
-        if (stepCout % 2 == 0) {
-            margin = ((lineLength + circleSize) * Math.abs(index - stepCout / 2) + lineLength / 2).toInt()
+        if (stepCount % 2 == 0) {
+            if (index < stepCount / 2) {
+                margin = -((lineLength + circleSize) * Math.abs(index - stepCount / 2 + 1) + (lineLength / 2 + circleSize)).toInt()
+            } else {
+                margin = ((lineLength + circleSize) * Math.abs(index - stepCount / 2) + lineLength / 2).toInt()
+            }
         } else {
-            margin = ((lineLength + circleSize) * Math.abs(index - stepCout / 2) + circleSize / 2).toInt()
+            margin = ((lineLength + circleSize) * Math.abs(index - stepCount / 2) + circleSize / 2).toInt()
+            if (index - stepCount / 2 <= 0) {
+                margin = -margin
+            } else {
+                margin -= circleSize.toInt()
+            }
         }
-        if (index - stepCout / 2 <= 0) {
-            margin = -margin
+
+        if (orientation == HORIZONTAL) {
+            return PointF(margin * 1.0f, -circleSize / 2 * 1.0f)
         } else {
-            margin -= circleSize.toInt()
+            return PointF(-circleSize / 2 * 1.0f, margin * 1.0f)
         }
-        return PointF(margin * 1.0f, -circleSize / 2 * 1.0f)
     }
 
     private fun getCircleType(index: Int): CircleType {
@@ -232,7 +260,7 @@ class StepView : View {
     }
 
     fun next() {
-        if (currentStep == stepCout - 1)
+        if (currentStep == stepCount - 1)
             return
         currentStep++
         invalidate()
@@ -253,5 +281,32 @@ class StepView : View {
     fun attachTo(parent: ViewGroup): StepView {
         parent.addView(this)
         return this
+    }
+
+    override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
+        val widthSize = MeasureSpec.getSize(widthMeasureSpec)
+        val heightSize = MeasureSpec.getSize(heightMeasureSpec)
+        val widthMode = MeasureSpec.getMode(widthMeasureSpec)
+        val heightMode = MeasureSpec.getMode(heightMeasureSpec)
+        var selfWidthSize = 0.0f
+        var selfHeightSize = 0.0f
+        if (orientation == HORIZONTAL) {
+            selfWidthSize = stepCount * circleSize + (stepCount - 1) * lineLength
+            selfHeightSize = circleSize
+        } else {
+            selfHeightSize = stepCount * circleSize + (stepCount - 1) * lineLength
+            selfWidthSize = circleSize
+        }
+        if (widthMode == MeasureSpec.AT_MOST || heightMode == MeasureSpec.AT_MOST) {
+            if (widthMode == MeasureSpec.AT_MOST && heightMode == MeasureSpec.AT_MOST) {
+                setMeasuredDimension(Math.min(selfWidthSize.toInt(), widthSize), Math.min(selfHeightSize.toInt(), heightSize))
+            } else if (widthMode == MeasureSpec.AT_MOST) {
+                setMeasuredDimension(Math.min(selfWidthSize.toInt(), widthSize), heightSize)
+            } else if (heightMode == MeasureSpec.AT_MOST) {
+                setMeasuredDimension(widthSize, Math.min(selfHeightSize.toInt(), heightSize))
+            }
+        } else {
+            super.onMeasure(widthMeasureSpec, heightMeasureSpec)
+        }
     }
 }

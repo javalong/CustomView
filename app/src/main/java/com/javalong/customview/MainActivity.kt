@@ -14,6 +14,9 @@ class MainActivity : AppCompatActivity() {
         btStepView.setOnClickListener({
             startActivity(Intent(this, StepViewActivity::class.java))
         })
+        btVerticalStepView.setOnClickListener({
+            startActivity(Intent(this, VerticalStepViewActivity::class.java))
+        })
         btEvaluationView.setOnClickListener({
             startActivity(Intent(this, EvaluationActivity::class.java))
         })
@@ -22,6 +25,9 @@ class MainActivity : AppCompatActivity() {
         })
         btCouponDetailLayout.setOnClickListener({
             startActivity(Intent(this, CouponDetailLayoutActivity::class.java))
+        })
+        btSelectCouponView.setOnClickListener({
+            startActivity(Intent(this, SelectCouponActivity::class.java))
         })
     }
 

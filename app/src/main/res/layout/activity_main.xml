@@ -14,6 +14,12 @@
         android:text="StepView" />
 
     <Button
+        android:id="@+id/btVerticalStepView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="VerticalStepView" />
+
+    <Button
         android:id="@+id/btEvaluationView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -30,6 +36,11 @@
         android:layout_height="wrap_content"
         android:text="CouponDetailLayout" />
 
+    <Button
+        android:id="@+id/btSelectCouponView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="SelectCouponView" />
 
 
 </LinearLayout>

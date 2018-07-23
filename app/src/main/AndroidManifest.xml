@@ -20,6 +20,8 @@
         <activity android:name=".EvaluationActivity"></activity>
         <activity android:name=".CouponLayoutActivity"></activity>
         <activity android:name=".CouponDetailLayoutActivity"></activity>
+        <activity android:name=".SelectCouponActivity"></activity>
+        <activity android:name=".VerticalStepViewActivity"></activity>
     </application>
 
 </manifest>
