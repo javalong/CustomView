@@ -138,6 +138,7 @@ class StepView : View {
         minorColor = typedValue.getColor(R.styleable.jcl_StepView_jcl_minorColor, DEFAULT_MINOR_COLOR)
         circleSize = typedValue.getDimension(R.styleable.jcl_StepView_jcl_circleSize, DEFAULT_CIRCLE_SIZE)
         numTextSize = typedValue.getDimension(R.styleable.jcl_StepView_jcl_numberTextSize, DEFAULT_NUM_TEXTSIZE)
+        orientation = typedValue.getInteger(R.styleable.jcl_StepView_jcl_orientation, HORIZONTAL)
         typedValue.recycle()
     }
 

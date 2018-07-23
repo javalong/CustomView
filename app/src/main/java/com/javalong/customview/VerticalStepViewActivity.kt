@@ -28,6 +28,5 @@ class VerticalStepViewActivity : AppCompatActivity() {
         bottomBtPre.setOnClickListener({
             bottomStepView.pre()
         })
-
     }
 }

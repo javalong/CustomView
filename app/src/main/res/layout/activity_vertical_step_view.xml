@@ -16,7 +16,14 @@
         <FrameLayout
             android:id="@+id/flContent"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent" >
+            <!--<com.javalong.customview.lib.view.StepView-->
+                <!--android:id="@+id/bottomStepView"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--app:jcl_orientation = "vertical"-->
+                <!--app:jcl_stepCount="5" />-->
+        </FrameLayout>
 
         <LinearLayout
             android:layout_width="match_parent"

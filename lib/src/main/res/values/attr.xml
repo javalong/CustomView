@@ -8,6 +8,10 @@
         <attr name="jcl_lineWidth" format="dimension|reference" />
         <attr name="jcl_circleSize" format="dimension|reference" />
         <attr name="jcl_numberTextSize" format="dimension|reference" />
+        <attr name="jcl_orientation" format="enum">
+            <enum name="horizontal" value="1" />
+            <enum name="vertical" value="2" />
+        </attr>
     </declare-styleable>
 
     <declare-styleable name="jcl_Evalueation">
